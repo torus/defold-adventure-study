@@ -15,7 +15,12 @@ end
 
 function update(self, dt)
     local cur_pos = go.get_position()
-    go.set_position(cur_pos + self.move * dt * 100)
+    if vmath.length_sqr(self.move) > 0 then
+        local move = vmath.normalize(self.move)
+        go.set_position(cur_pos + move * dt * 100)
+        local angle = math.atan2(move.x, -move.y) * 180 / math.pi
+        go.set_rotation(vmath.euler_to_quat(0, 0, angle))
+    end
 end
 
 function on_message(self, message_id, message, sender)
