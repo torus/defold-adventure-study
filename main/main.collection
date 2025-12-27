@@ -1,7 +1,7 @@
 name: "main"
 scale_along_z: 0
 embedded_instances {
-  id: "go"
+  id: "main"
   data: "components {\n"
   "  id: \"main\"\n"
   "  component: \"/main/main.script\"\n"
@@ -23,11 +23,39 @@ embedded_instances {
   "fov: 0.7854\\n"
   "near_z: 0.1\\n"
   "far_z: 1000.0\\n"
-  "orthographic_projection: 1\\n"
   "\"\n"
   "}\n"
   ""
   position {
+    y: -500.0
     z: 500.0
+  }
+  rotation {
+    x: 0.38268343
+    w: 0.9238795
+  }
+}
+embedded_instances {
+  id: "floor"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/builtins/assets/meshes/quad.dae\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/main/floor.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/builtins/assets/images/logo/logo_blue_1024.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  scale3 {
+    x: 500.0
+    y: 500.0
+    z: 5000.0
   }
 }

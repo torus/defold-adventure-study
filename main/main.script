@@ -2,8 +2,11 @@
 
 function init(self)
     local pos = vmath.vector3(100, 100, 0)
-    local id = factory.create('#player_factory', pos, nil, nil, 100)
-    print('hello', id)
+    self.player_id = factory.create('#player_factory', pos, nil, nil, 100)
+    self.player_move = vmath.vector3(0, 0, 0)
+
+    msg.post(".", "acquire_input_focus")
+    print('hello', self.player_id)
 end
 
 function final(self)
@@ -34,15 +37,40 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-    -- Add input-handling code here. The game object this script is attached to
-    -- must have acquired input focus:
-    --
-    --    msg.post(".", "acquire_input_focus")
-    --
-    -- All mapped input bindings will be received. Mouse and touch input will
-    -- be received regardless of where on the screen it happened.
-    -- Learn more: https://defold.com/manuals/input/
-    -- Remove this function if not needed
+    if action_id == hash("left") then
+        if action.pressed then
+            self.player_move.x = -1
+            msg.post(self.player_id, 'update_move', {move = self.player_move})
+        elseif action.released then
+            self.player_move.x = 0
+            msg.post(self.player_id, 'update_move', {move = self.player_move})
+        end
+    elseif action_id == hash("right") then
+        if action.pressed then
+            self.player_move.x = 1
+            msg.post(self.player_id, 'update_move', {move = self.player_move})
+        elseif action.released then
+            self.player_move.x = 0
+            msg.post(self.player_id, 'update_move', {move = self.player_move})
+        end
+    elseif action_id == hash("up") then
+        if action.pressed then
+            self.player_move.y = 1
+            msg.post(self.player_id, 'update_move', {move = self.player_move})
+        elseif action.released then
+            self.player_move.y = 0
+            msg.post(self.player_id, 'update_move', {move = self.player_move})
+        end
+    elseif action_id == hash("down") then
+        if action.pressed then
+            self.player_move.y = -1
+            msg.post(self.player_id, 'update_move', {move = self.player_move})
+        elseif action.released then
+            self.player_move.y = 0
+            msg.post(self.player_id, 'update_move', {move = self.player_move})
+        end
+    end
+
 end
 
 function on_reload(self)

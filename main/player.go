@@ -5,7 +5,7 @@ components {
 embedded_components {
   id: "model"
   type: "model"
-  data: "mesh: \"/builtins/assets/meshes/sphere.dae\"\n"
+  data: "mesh: \"/builtins/assets/meshes/cube.dae\"\n"
   "name: \"{{NAME}}\"\n"
   "materials {\n"
   "  name: \"default\"\n"
@@ -16,4 +16,7 @@ embedded_components {
   "  }\n"
   "}\n"
   ""
+  position {
+    z: 0.5
+  }
 }
