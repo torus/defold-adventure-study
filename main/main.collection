@@ -22,17 +22,17 @@ embedded_instances {
   "  data: \"aspect_ratio: 1.0\\n"
   "fov: 0.7854\\n"
   "near_z: 0.1\\n"
-  "far_z: 1000.0\\n"
+  "far_z: 2000.0\\n"
   "\"\n"
   "}\n"
   ""
   position {
-    y: -500.0
+    y: -750.0
     z: 500.0
   }
   rotation {
-    x: 0.38268343
-    w: 0.9238795
+    x: 0.5
+    w: 0.8660254
   }
 }
 embedded_instances {

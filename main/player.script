@@ -5,6 +5,8 @@ function init(self)
 
     go.set('#model', 'light', vmath.vector4(1000, -1000, 1000, 1))
 
+    model.play_anim("#model", "Walking_A", go.PLAYBACK_LOOP_FORWARD)
+
     print('player init:', self, go.get('#model', 'light'))
 end
 

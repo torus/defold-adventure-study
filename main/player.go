@@ -5,18 +5,25 @@ components {
 embedded_components {
   id: "model"
   type: "model"
-  data: "mesh: \"/builtins/assets/meshes/cube.dae\"\n"
+  data: "mesh: \"/assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb\"\n"
+  "skeleton: \"/assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb\"\n"
+  "animations: \"/assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb\"\n"
+  "default_animation: \"Walking_C\"\n"
   "name: \"{{NAME}}\"\n"
   "materials {\n"
-  "  name: \"default\"\n"
-  "  material: \"/builtins/materials/model.material\"\n"
+  "  name: \"rogue\"\n"
+  "  material: \"/builtins/materials/model_skinned.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
-  "    texture: \"/builtins/assets/images/logo/logo_256.png\"\n"
+  "    texture: \"/assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png\"\n"
   "  }\n"
   "}\n"
   ""
   position {
     z: 0.5
+  }
+  rotation {
+    x: 0.70710677
+    w: 0.70710677
   }
 }
