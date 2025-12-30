@@ -1,9 +1,14 @@
 -- -*- mode: lua -*-
 
 go.property('light', vmath.vector4(0, 0, 1000, 1))
+go.property('decor', false)
 
 function init(self)
    go.set('#model', 'light', self.light)
+
+   if self.decor then
+      factory.create('#decoration_factory', go.get_position())
+   end
 end
 
 function final(self)

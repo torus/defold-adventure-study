@@ -13,7 +13,10 @@ function init(self)
 	  local pos = vmath.vector3(i * 200 + j * 100, j * 100 * math.sqrt(3), 0)
 	  local id = factory.create(
 	     '/level#tile_factory', pos, nil,
-	     {light = vmath.vector4(1000, -1000, 1000, 1)},
+	     {
+		light = vmath.vector4(1000, -1000, 1000, 1),
+		decor = j == 2,
+	     },
 	     100)
        end
     end

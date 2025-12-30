@@ -1,11 +1,7 @@
-components {
-  id: "level_tile"
-  component: "/main/level_tile.script"
-}
 embedded_components {
   id: "model"
   type: "model"
-  data: "mesh: \"/assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/gltf/tiles/base/hex_grass.gltf\"\n"
+  data: "mesh: \"/assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/gltf/decoration/nature/trees_A_medium.gltf\"\n"
   "name: \"{{NAME}}\"\n"
   "materials {\n"
   "  name: \"hexagons_medieval\"\n"
@@ -20,10 +16,4 @@ embedded_components {
     x: 0.70710677
     w: 0.70710677
   }
-}
-embedded_components {
-  id: "decoration_factory"
-  type: "factory"
-  data: "prototype: \"/main/level_decoration.go\"\n"
-  ""
 }
