@@ -14,10 +14,11 @@ function final(self)
 end
 
 function update(self, dt)
+    local player_speed = 125
     local cur_pos = go.get_position()
     if vmath.length_sqr(self.move) > 0 then
         local move = vmath.normalize(self.move)
-        go.set_position(cur_pos + move * dt * 100)
+        go.set_position(cur_pos + move * dt * player_speed)
         local angle = math.atan2(move.x, -move.y) * 180 / math.pi
         go.set_rotation(vmath.euler_to_quat(0, 0, angle))
     end
