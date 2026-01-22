@@ -7,6 +7,8 @@ function init(self)
 
     model.play_anim("#model", "Walking_A", go.PLAYBACK_LOOP_FORWARD)
 
+    msg.post("#collisionobject", "enable")
+
     print('player init:', self, go.get('#model', 'light'))
 end
 

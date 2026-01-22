@@ -1,27 +1,27 @@
 -- -*- mode: lua -*-
 
 function init(self)
-    local player_scale, tile_scale = 75, 300
+    local player_scale, tile_scale = 50, 300
 
-    local pos = vmath.vector3(100, 100, 0)
+    local pos = vmath.vector3(0, 0, 0)
     self.player_id = factory.create('#player_factory', pos, nil, nil, player_scale)
     self.player_move = vmath.vector3(0, 0, 0)
 
     msg.post(".", "acquire_input_focus")
     print('hello', self.player_id)
 
-    for i = -2, 2 do
-       for j = -2, 2 do
-	  local pos = vmath.vector3(i * 2 * tile_scale + j * tile_scale, j * tile_scale * math.sqrt(3), 0)
-	  local id = factory.create(
-	     '/level#tile_factory', pos, nil,
-	     {
-		light = vmath.vector4(1000, -1000, 1000, 1),
-		decor = j == 2,
-	     },
-	     tile_scale)
-       end
-    end
+    -- for i = -2, 2 do
+    --    for j = -2, 2 do
+    -- 	  local pos = vmath.vector3(i * 2 * tile_scale + j * tile_scale, j * tile_scale * math.sqrt(3), 0)
+    -- 	  local id = factory.create(
+    -- 	     '/level#tile_factory', pos, nil,
+    -- 	     {
+    -- 		light = vmath.vector4(1000, -1000, 1000, 1),
+    -- 		decor = j == 2,
+    -- 	     },
+    -- 	     tile_scale)
+    --    end
+    -- end
 end
 
 function final(self)
